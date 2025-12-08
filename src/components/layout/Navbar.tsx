@@ -22,7 +22,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-  <div className="w-12 h-12 rounded-xl overflow-hidden">
+ <div className="w-20 h-20 rounded-xl overflow-hidden">
+
     <img 
       src="/logo.jpeg" 
       alt="I-CARE Health Solution Logo" 
