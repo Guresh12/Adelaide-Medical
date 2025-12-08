@@ -62,11 +62,11 @@ export default function Index() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-8 pt-8 border-t border-primary-foreground/10">
                 <div>
-                  <div className="font-heading text-3xl font-bold text-secondary">500+</div>
+                  <div className="font-heading text-3xl font-bold text-secondary">50+</div>
                   <div className="text-sm text-primary-foreground/70">Happy Patients</div>
                 </div>
                 <div>
-                  <div className="font-heading text-3xl font-bold text-secondary">15+</div>
+                  <div className="font-heading text-3xl font-bold text-secondary">2+</div>
                   <div className="text-sm text-primary-foreground/70">Expert Nurses</div>
                 </div>
                 <div>
