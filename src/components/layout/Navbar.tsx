@@ -22,14 +22,20 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-              <Stethoscope className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-heading font-bold text-xl text-primary">I-CARE</span>
-              <span className="block text-xs text-muted-foreground">Health Solution</span>
-            </div>
-          </Link>
+  <div className="w-12 h-12 rounded-xl overflow-hidden">
+    <img 
+      src="/logo.jpeg" 
+      alt="I-CARE Health Solution Logo" 
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  <div className="hidden sm:block">
+    <span className="font-heading font-bold text-xl text-primary">I-CARE</span>
+    <span className="block text-xs text-muted-foreground">Health Solution</span>
+  </div>
+</Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
