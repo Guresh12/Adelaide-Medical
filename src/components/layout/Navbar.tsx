@@ -22,20 +22,19 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
- <div className="w-20 h-20 rounded-xl overflow-hidden">
+            <div className="w-20 h-20 rounded-xl overflow-hidden">
+              <img
+                src="/logo ad.png"
+                alt="Adelaide Medical Services Logo"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-    <img 
-      src="/logo.jpeg" 
-      alt="I-CARE Health Solution Logo" 
-      className="w-full h-full object-cover"
-    />
-  </div>
-
-  <div className="hidden sm:block">
-    <span className="font-heading font-bold text-xl text-primary">I-CARE</span>
-    <span className="block text-xs text-muted-foreground">Health Solution</span>
-  </div>
-</Link>
+            <div className="hidden sm:block">
+              <span className="font-heading font-bold text-xl text-primary">Adelaide</span>
+              <span className="block text-xs text-muted-foreground">Medical Services</span>
+            </div>
+          </Link>
 
 
           {/* Desktop Navigation */}

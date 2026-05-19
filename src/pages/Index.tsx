@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
-import { ArrowRight, Phone, Shield, Clock, Award, Heart, Users, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Phone, Shield, Clock, Award, Heart, Users, Star, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import { services } from "@/data/services";
 import { testimonials } from "@/data/testimonials";
 import { cn } from "@/lib/utils";
+import { useServices } from "@/hooks/useServices";
+import ServiceIcon from "@/components/ui/ServiceIcon";
 
 export default function Index() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const { data: servicesData = [], isLoading } = useServices(true);
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -21,40 +23,39 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-primary" />
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-secondary blur-3xl" />
-          <div className="absolute bottom-20 left-20 w-72 h-72 rounded-full bg-secondary blur-3xl" />
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl opacity-70" />
+          <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-secondary/5 blur-3xl opacity-70" />
         </div>
 
         <div className="container-custom relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-primary-foreground space-y-8 animate-fade-up">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary backdrop-blur-sm">
+            <div className="text-foreground space-y-8 animate-fade-up">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-primary font-medium text-sm">
                 <Heart className="w-4 h-4" />
-                <span className="text-sm font-medium">Trusted Home Healthcare</span>
+                <span>Who We Are</span>
               </div>
-              
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Compassionate Home Nursing{" "}
-                <span className="text-secondary">You Can Trust</span>
+
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-navy">
+                Adelaide Medical <br />
+                <span className="text-primary">Services</span>
               </h1>
-              
-              <p className="text-lg md:text-xl text-primary-foreground/80 max-w-lg">
-                Professional, personalized care delivered to your home. Experience healthcare that puts you and your family first.
+
+              <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
+                Adelaide Medical Services is a Nairobi-based home healthcare agency providing high-quality, patient-centred medical care to individuals and families.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Button variant="hero" size="xl" asChild>
+                <Button variant="secondary" size="xl" asChild className="animate-pulse">
                   <Link to="/book">
                     Book a Nurse
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                 </Button>
-                <Button variant="hero-outline" size="xl">
-                  <Phone className="w-5 h-5" />
+                <Button variant="outline" size="xl" className="border-2 hover:bg-accent hover:text-primary">
+                  <Phone className="w-5 h-5 mr-2" />
                   Call Now
                 </Button>
               </div>
@@ -80,13 +81,13 @@ export default function Index() {
             <div className="relative hidden lg:block animate-fade-up" style={{ animationDelay: "200ms" }}>
               <div className="relative z-10">
                 <img
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=700&fit=crop"
+                  src="logo ad.png"
                   alt="Caring nurse with patient"
                   className="rounded-3xl shadow-2xl object-cover w-full"
                 />
               </div>
               {/* Floating Card */}
-              <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-2xl shadow-card animate-float">
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-card animate-float border border-accent/50">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center">
                     <Shield className="w-6 h-6 text-secondary" />
@@ -118,29 +119,46 @@ export default function Index() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {services.slice(0, 4).map((service, index) => (
-              <div
-                key={service.id}
-                className="card-medical group animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="icon-wrapper mb-5 group-hover:bg-secondary transition-colors">
-                  <service.icon className="group-hover:text-secondary-foreground" />
-                </div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                  {service.description}
-                </p>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center text-secondary font-medium text-sm hover:gap-2 transition-all"
-                >
-                  Learn More <ArrowRight className="w-4 h-4 ml-1" />
-                </Link>
+            {isLoading ? (
+              <div className="col-span-full flex justify-center py-12">
+                <Loader2 className="w-8 h-8 animate-spin text-primary" />
               </div>
-            ))}
+            ) : (
+              servicesData.slice(0, 4).map((service, index) => (
+                <div
+                  key={service.id}
+                  className="card-medical group animate-fade-up overflow-hidden p-0"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <img
+                      src={service.image_url || "/aly.jpg"}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg">
+                        <ServiceIcon name={service.icon_name} className="w-6 h-6 text-primary" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-heading text-xl font-bold text-navy mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                      {service.description}
+                    </p>
+                    <Link
+                      to="/services"
+                      className="inline-flex items-center text-primary font-bold text-sm group-hover:gap-2 transition-all"
+                    >
+                      Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
 
           <div className="text-center mt-12">
@@ -233,7 +251,7 @@ export default function Index() {
                 Dr. Sarah Johnson, RN, MSN
               </h2>
               <p className="text-muted-foreground mb-4">
-                With over 15 years of nursing experience and a Master's degree in Nursing, Dr. Johnson founded I-CARE Health Solution with a simple mission: to bring hospital-quality care into the warmth of home.
+                With over 15 years of nursing experience and a Master's degree in Nursing, Dr. Johnson founded Adelaide Medical Services with a simple mission: to bring hospital-quality care into the warmth of home.
               </p>
               <p className="text-muted-foreground mb-6">
                 Her vision of compassionate, patient-centered care has helped over 500 families receive the support they deserve, right where they feel most comfortable.
@@ -345,7 +363,7 @@ export default function Index() {
               className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
             >
               <Phone className="w-5 h-5" />
-              Call: +1 (555) 123-4567
+              Call: +254706538146
             </Button>
           </div>
         </div>

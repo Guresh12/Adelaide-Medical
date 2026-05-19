@@ -37,8 +37,8 @@ export default function Footer() {
                 <Stethoscope className="w-6 h-6 text-secondary-foreground" />
               </div>
               <div>
-                <span className="font-heading font-bold text-xl">I-CARE</span>
-                <span className="block text-xs text-primary-foreground/70">Health Solution</span>
+                <span className="font-heading font-bold text-xl">Adelaide</span>
+                <span className="block text-xs text-primary-foreground/70">Medical Services</span>
               </div>
             </div>
             <p className="text-primary-foreground/80 mb-6">
@@ -93,18 +93,18 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-secondary mt-0.5" />
                 <div>
-                  <p className="text-primary-foreground/80">+1 (555) 123-4567</p>
-                  <p className="text-primary-foreground/80">+1 (555) 987-6543</p>
+                  <p className="text-primary-foreground/80">+254706538146</p>
+                  <p className="text-primary-foreground/80">+254706538146</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-secondary mt-0.5" />
-                <p className="text-primary-foreground/80">info@icarehealth.com</p>
+                <p className="text-primary-foreground/80">info@adelaide.co.ke</p>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary mt-0.5" />
                 <p className="text-primary-foreground/80">
-                  123 Healthcare Avenue,<br />Medical District, City 12345
+                  123 Healthcare South C,<br />Nairobi, City 12345
                 </p>
               </li>
             </ul>
@@ -114,7 +114,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center">
           <p className="text-primary-foreground/60">
-            © {new Date().getFullYear()} I-CARE Health Solution. All rights reserved.
+            © {new Date().getFullYear()} Adelaide Medical Services. All rights reserved.
           </p>
         </div>
       </div>

@@ -36,19 +36,19 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
-      action: "tel:+15551234567",
+      details: ["0706538146", "0706538147"],
+      action: "tel:+255706538146",
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@icarehealth.com", "support@icarehealth.com"],
-      action: "mailto:info@icarehealth.com",
+      details: ["info@adelaide.co.ke", "support@adelaide.co.ke"],
+      action: "mailto:info@adelaide.co.ke",
     },
     {
       icon: MapPin,
       title: "Address",
-      details: ["123 Healthcare Avenue", "Medical District, City 12345"],
+      details: ["123 Healthcare South C", "Nairobi,City 12345"],
       action: "#map",
     },
     {
@@ -118,7 +118,7 @@ export default function Contact() {
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <a href="tel:+15551234567">
+                  <a href="tel:+254706538146">
                     <Phone className="w-5 h-5" />
                     Call Now
                   </a>

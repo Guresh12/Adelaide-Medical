@@ -46,7 +46,7 @@ export default function About() {
             Caring for Your Health, <br className="hidden sm:block" />One Home at a Time
           </h1>
           <p className="text-primary-foreground/80 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
-            Since our founding, I-CARE Health Solution has been dedicated to bringing quality healthcare directly to families who need it most.
+            Since our founding, Adelaide Medical Services has been dedicated to bringing quality healthcare directly to families who need it most.
           </p>
         </div>
       </section>
@@ -119,10 +119,10 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Dr. Sarah Johnson founded I-CARE Health Solution after witnessing firsthand the challenges families face when caring for loved ones at home. With her Master's degree in Nursing and over 15 years of clinical experience, she envisioned a healthcare service that would bridge the gap between hospital care and home comfort.
+                  Dr. Sarah Johnson founded Adelaide Medical Services after witnessing firsthand the challenges families face when caring for loved ones at home. With her Master's degree in Nursing and over 15 years of clinical experience, she envisioned a healthcare service that would bridge the gap between hospital care and home comfort.
                 </p>
                 <p>
-                  "I started I-CARE because I believed every family deserves access to quality nursing care without the stress and inconvenience of constant hospital visits," says Dr. Johnson. "Our nurses don't just provide medical care—they become trusted partners in each family's healthcare journey."
+                  "I started Adelaide Medical Services because I believed every family deserves access to quality nursing care without the stress and inconvenience of constant hospital visits," says Dr. Johnson. "Our nurses don't just provide medical care—they become trusted partners in each family's healthcare journey."
                 </p>
                 <p>
                   What began as a small team of dedicated nurses has grown into a comprehensive home healthcare service, but the core principle remains unchanged: treat every patient like family.
